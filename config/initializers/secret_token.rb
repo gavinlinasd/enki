@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-GavinlinCom::Application.config.secret_token = '8c2986bf77b574d3c2a86f345f48710675f9cb050546fbf91141a393f991f5268b027eca715ef78c072f04938583c68d73cf8c2c0e23aaec492054d18415dbbd'
+Enki::Application.config.secret_token = '1481948abe0b49729e01200f00033b021cf2e7e1128d37da0cb637c1b661f99cf3bc163c5ba57f164c02254d9255591358c502ddeb1107fe2647af3c5bfa0c37'
