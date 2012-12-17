@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -11,9 +12,9 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
 end
 
-platforms :ruby do
-  gem 'sqlite3'
-end
+# platforms :ruby do
+#   gem 'sqlite3'
+# end
 
 platforms :jruby do
   gem 'activerecord-jdbcsqlite3-adapter'
@@ -57,6 +58,11 @@ group :test do
   gem 'webrat'
 end
 
+group :production do
+	gem 'pg'
+end
+
 group :development, :test do
   gem 'rspec-rails'
+  gem 'sqlite3'
 end
