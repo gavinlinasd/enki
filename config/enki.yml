@@ -1,5 +1,3 @@
-# Configuration options for your blog - customise to taste
-# This file contains no secret information, so can be stored in source control (unlike database.yml)
 title: G for Gavin
 url:   http://www.gavinlin.com
 author:
