@@ -9,6 +9,8 @@ gem 'rails', '3.2.8'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'uglifier'
+  gem 'compass-rails'
 end
 
 #platforms :ruby do
@@ -25,6 +27,7 @@ platforms :jruby do
 end
 
 gem 'jquery-rails'
+gem 'thin'
 
 # Use unicorn as the web server
 # gem 'unicorn'
