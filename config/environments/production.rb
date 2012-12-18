@@ -62,3 +62,10 @@ Enki::Application.configure do
   config.active_support.deprecation = :notify
 
 end
+ActionMailer::Base.smtp_settings = {
+  address: 'smtp.gmail.com',
+  port: 587,
+  authentication: 'plain',
+  user_name: 'gavin.lin.dev@gmail.com'
+  enable_starttls_auto: true
+}

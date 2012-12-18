@@ -12,10 +12,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
 end
 
-# platforms :ruby do
-#   gem 'sqlite3'
-# end
-
 platforms :jruby do
   gem 'activerecord-jdbcsqlite3-adapter'
   gem 'trinidad'
@@ -23,6 +19,7 @@ platforms :jruby do
 end
 
 gem 'jquery-rails'
+gem 'thin'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -48,6 +45,10 @@ gem 'open_id_authentication'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
+group :production do
+  gem 'pg'
+end
+
 group :test do
   gem 'database_cleaner'
   gem 'cucumber-rails',    :require => false
@@ -56,10 +57,6 @@ group :test do
   gem 'rspec'
   gem 'nokogiri', '~> 1.5.0'
   gem 'webrat'
-end
-
-group :production do
-	gem 'pg'
 end
 
 group :development, :test do
