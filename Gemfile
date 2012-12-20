@@ -28,6 +28,7 @@ end
 
 gem 'jquery-rails'
 gem 'thin'
+gem 'newrelic_rpm'
 
 # Use unicorn as the web server
 # gem 'unicorn'
