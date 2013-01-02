@@ -1,8 +1,9 @@
-h1. G for Gavin
+h2. G for Gavin
 
-A ruby on rails blog based on Enki.
+A ruby on rails blog based on Enki. 
 
-_____________________________________________________________________________________
+__________________Original Doc Below this line_____________________
+
 
 h1. Enki
 

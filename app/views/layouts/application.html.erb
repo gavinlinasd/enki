@@ -2,8 +2,9 @@
 <html dir="ltr" lang="en-US">
 <head>
   <meta charset="utf-8">
-  <title><%= html_title yield(:page_title) %></title>
+  <!-- Bootstrap CSS CDN -->
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <title><%= html_title yield(:page_title) %></title>
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'application' %>
@@ -48,7 +49,6 @@
     </div>
   </div>
 <!-- Bootstrap Javascript CDN -->
-
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,10 +1,23 @@
-<h1><%= link_to(enki_config[:title], '/') %></h1>
-<% if flash[:error] %><p><%= flash[:error] %></p><% end %>
-<%= form_tag(admin_session_path) do -%>
-  <h2>Stop! Who are you?</h2>
-  <p><%= text_field_tag 'openid_url' %></p>
-  <% if allow_login_bypass? -%>
-    <p><%= check_box_tag 'bypass_login' %> <label for="bypass_login">Bypass credentials check</label></p>
-  <% end -%>
-  <p><%= submit_tag("Login with OpenID") %></p>
-<% end -%>
+<div>
+  <div> 
+    </br>
+    <h1><%= link_to(enki_config[:title], '/') %></h1> 
+    </br>
+  </div>
+  <% if flash[:error] %>
+    <div><%= flash[:error] %></div><% end %>
+  <div>
+    <%= form_tag(admin_session_path) do -%>
+      <% if allow_login_bypass? -%>
+        <div>
+        <%= label_tag 'bypass_login', 'Bypass credentials check' %> 
+        <%= check_box_tag 'bypass_login' %> 
+        </div>
+      <% end -%>
+
+    </br>
+    <div><%= submit_tag "Login with Google", :class => "btn" %></div>
+    </br>
+    <% end -%>
+  </div>
+</div>

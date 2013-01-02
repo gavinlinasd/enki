@@ -15,22 +15,18 @@ class Admin::SessionsController < ApplicationController
   def create
     return successful_login if allow_login_bypass? && params[:bypass_login]
 
-    if params[:openid_url].blank? && !request.env[Rack::OpenID::RESPONSE]
-      flash.now[:error] = "You must provide an OpenID URL"
-      render :action => 'new'
-    else
-      authenticate_with_open_id(params[:openid_url]) do |result, identity_url|
-        if result.successful?
-          if enki_config.author_open_ids.include?(URI.parse(identity_url))
-            return successful_login
-          else
-            flash.now[:error] = "You are not authorized"
-          end
+	google_openid = enki_config.author_open_ids.first
+    authenticate_with_open_id(google_openid) do |result, identity_url|
+      if result.successful?
+        if enki_config.author_open_ids.include?(URI.parse(identity_url))
+          return successful_login
         else
-          flash.now[:error] = result.message
+          flash.now[:error] = "You are not authorized"
         end
-        render :action => 'new'
+      else
+        flash.now[:error] = result.message
       end
+      render :action => 'new'
     end
   end
 

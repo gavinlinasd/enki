@@ -1,10 +1,11 @@
 title: G for Gavin
-url:   http://www.gavinlin.com
+url:   http://gavinlin.herokuapp.com
 author:
   name:    Gavin Lin			# For copyright notice and ATOM feeds
   email:   gavinlin@outlook.com # Exception emails will go here, and it is used in ATOM feeds
   open_id:                  	# These are used to login to the admin area
-      - https://www.google.com/accounts/o8/id
-      - http://gavinlinasd.myopenid.com/
       - https://profiles.google.com/100100557822078438877
+      - https://www.google.com/accounts/o8/id
 
+  # If you wish to login with google account, place your profile link as the first
+  # link in the above openid url list
