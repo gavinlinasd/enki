@@ -1,12 +1,12 @@
 <tr class="<%= cycle('', 'alt') %>">
-  <td><%= post.published_at.strftime('%d %b, %Y') %></td>
+  <td><span class="btn btn-small btn-info"><%= post.published_at.strftime('%d %b, %Y') %></span></td>
   <td><%= link_to (post.title == '' ? '[Untitled]' : truncate(post.title, :length => 30)), admin_post_path(post) %></td>
   <td><% tmpc = truncate(post.body, :length => 55) %><%= (tmpc != '' ? tmpc : '&nbsp;') %></td>
   <td><%= post.approved_comments.size %></td>
   <td>
-    <%= link_to(image_tag('silk/pencil.png', :alt => 'edit'), admin_post_path(post)) %>
+    <%= link_to(image_tag('silk/pencil.png', :alt => 'edit')+"Edit", admin_post_path(post), {:class => "btn btn-primary"}) %>
     <%= form_for(post, :as => :post, :url => admin_post_path(post), :html => {:class => 'delete-item', :method => :delete}) do |form| -%>
-      <%= image_submit_tag("silk/delete.png", :alt => 'Delete Post') %>
+      <%= submit_tag 'Delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
     <% end -%>
   </td>
 </tr>

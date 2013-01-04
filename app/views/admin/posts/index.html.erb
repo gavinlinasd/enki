@@ -1,6 +1,11 @@
-<h1>Your posts</h1>
+<div class="title">
+  <h1>Your posts
+  <span class="new"> <%= link_to("Create new post", new_admin_post_path, {:class => 'btn btn-success'}) %></span>
+</h1>
+</div>
 
-<table id='posts'>
+
+<table id='posts' class="table table-hover">
   <thead>
     <tr>
       <th>Published At</th>

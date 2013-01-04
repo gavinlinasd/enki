@@ -1,4 +1,6 @@
+<div class="title">
 <h1>Editing post - <%= link_to(@post.title, post_path(@post)) %></h1>
+</div>
 
 <%= semantic_form_for([:admin, @post]) do |form| -%>
   <%= render :partial => 'form', :locals => {:form => form} %>

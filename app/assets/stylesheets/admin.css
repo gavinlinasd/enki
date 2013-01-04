@@ -61,9 +61,8 @@ body {
   min-height: 270px;
 }
 
-.panel p {
+.panel h2 {
   font-family: 'Vollkorn', Georgia, Times, serif;
-  margin-top: 0;
 }
 
 .panel a {
@@ -106,6 +105,24 @@ body {
 .panel .count a {
   font-weight: bold;
   color: #888888;
+}
+
+.title {
+  max-width: 970px;
+  width: 100%;
+  color: #222222;
+}
+
+.title .new {
+  float: right;
+  font-family: 'Ubuntu', Helvetica, Sans-serif;
+  font-weight: normal;
+}
+
+.title h1 {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-family: 'Vollkorn', Georgia, Times, serif;
 }
 
 #recent-comments ul ul {
@@ -186,7 +203,7 @@ form input,
 form select,
 form textarea,
 form button {
-  font: 8pt "lucida grande", "lucida sans unicode", "lucida", sans-serif;
+  font: 10pt "lucida grande", "lucida sans unicode", "lucida", sans-serif;
 }
 
 #post_body,

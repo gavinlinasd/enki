@@ -1,6 +1,11 @@
-<h1>Your pages</h1>
+<div class="title">
+  <h1>Your pages
+  <span class="new"> <%= link_to("Create new page", new_admin_page_path, {:class => 'btn btn-success'}) %></span>
+</h1>
+</div>
 
-<table id='pages'>
+
+<table id='pages' class="table table-hover">
   <thead>
     <tr>
       <th>Created At</th>
