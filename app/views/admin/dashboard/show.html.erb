@@ -8,9 +8,11 @@
 <ul>
   <% @posts.each_with_index do |post, i| -%>
     <li class="<%= i == 0 ? 'first ' : '' %>item">
-      <h3><%= link_to(truncate(post.title, :length => 50), admin_post_path(post)) %></h3>
-      <span class='date'><%= post.published_at.strftime("%b %e") %></span>
-      <span class='count'><%= link_to(post.approved_comments.size, post_path(post)) %></span>
+      <span class='label label-info'><%= post.published_at.strftime("%b %e") %></span>
+      <span class='post'>
+        <%= link_to(truncate(post.title, :length => 50), admin_post_path(post)) %>
+      </span>
+      <div class='count'><%= link_to(post.approved_comments.size, post_path(post)) %></div>
     </li>
   <% end -%>
 </ul>
@@ -21,25 +23,36 @@
 <ul>
   <% @comment_activity.each_with_index do |activity, i| -%>
     <li class="<%= i == 0 ? 'first ' : '' %>item">
-      <h3><%= link_to(truncate(activity.post.title, :length => 50), post_path(activity.post)) %></h3>
-      <span class='date'><%= activity.most_recent_comment.created_at.strftime("%b %e") %></span>
-      <span class='count'><%= activity.post.approved_comments.size %></span>
+      <span class='label label-info'><%= activity.most_recent_comment.created_at.strftime("%b %e") %></span>
+      <span class='post'>
+        <%= link_to(truncate(activity.post.title, :length => 50), post_path(activity.post)) %>
+      </span>
+      <span class='count badge badge-success'><%= activity.post.approved_comments.size %></span>
       <ul>
+      <!-- List of the comments -->
         <% activity.comments.each_with_index do |comment, index| -%>
           <%= content_tag :li, :class => activity.comments.size == index + 1 ? 'last' : nil do -%>
-            <%= link_to(comment.author, admin_comment_path(comment), {:id => "comment-link-#{comment.id}", :class => 'comment-link'}) -%>
+            <%= link_to(comment.author, "#comment-body-#{comment.id}", {:id => "comment-link-#{comment.id}", :class => 'comment-link', :data => {:toggle => 'modal'} }) -%>
           <% end -%>
         <% end -%>
       </ul>
+      <!-- Body of the comments as modals -->
       <% activity.comments.each do |comment| -%>
-        <div class='comment-body' id='comment-body-<%= comment.id %>'>
-          <div class='comment-actions'>
-            <%= link_to(image_tag('silk/pencil.png', :alt => 'edit'), admin_comment_path(comment)) %>
-            <%= form_for(comment, :as => :comment, :url => admin_comment_path(comment), :html => {:class => 'delete-item', :id => "delete-comment-#{comment.id}", :method => :delete}) do |form| -%>
-              <%= image_submit_tag("silk/delete.png", :alt => 'Delete Comment') %>
-            <% end -%>
+        <div class='modal hide fade' id='comment-body-<%= comment.id %>' tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <span class='label label-info'><%= comment.created_at.strftime("%b %e") %></span>
+            From: <%= comment.author %>
           </div>
+          <div class="modal-body">
           <%= comment.body_html %>
+          </div>
+          <div class="modal-footer">
+            <div class='comment-actions'>
+              <%= link_to('Edit', admin_comment_path(comment), {:class => "comment-button btn btn-primary"}) %>
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+          </div>
         </div>
       <% end -%>
     </li>

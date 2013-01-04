@@ -5,7 +5,7 @@
     </br>
   </div>
   <% if flash[:error] %>
-    <div><%= flash[:error] %></div><% end %>
+    <div class='alert'><%= flash[:error] %></div><% end %>
   <div>
     <%= form_tag(admin_session_path) do -%>
       <% if allow_login_bypass? -%>

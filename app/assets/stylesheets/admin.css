@@ -18,7 +18,7 @@
   width: 100%;
   top: 0px;
   left: 0px;
-  background-color: #222222;
+  background: url(/assets/background/nasty_fabric.png) repeat 0 0;
 }
 
 #nav ul {
@@ -33,19 +33,19 @@
 }
 
 #nav a {
-  color: #eeeeee;
   text-decoration: none;
   font-weight: bold;
 }
 #nav a.current {
-  border-bottom: solid 3px #eeeeee;
+  background-color: #333333;
+  color: #eeeeee;
 }
 
 body {
   padding-top: 30px;
-  background-color: #dddddd;
-  font-family: Helvetica, Sans-serif;
-  font-size: 10pt;
+  background: url(/assets/background/gray_jean.png) repeat 0 0;
+  font-family: 'Ubuntu', Helvetica, Sans-serif;
+  font-size: 12pt;
   margin: 10px;
 }
 
@@ -54,19 +54,15 @@ body {
   margin-top: 10px;
   margin-right: 10px;
   color: #222222;
-  background-color: #ececec;
   padding: 1em;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
-  width: 34em;
+  width: 30em;
   min-height: 270px;
 }
 
-.panel h2 {
-  margin-bottom: 2px;
-}
-
 .panel p {
+  font-family: 'Vollkorn', Georgia, Times, serif;
   margin-top: 0;
 }
 
@@ -99,10 +95,8 @@ body {
   margin: 0;
   margin-right: 1em;
 }
-
-.panel .date {
-  float: left;
-  font-size: 10pt;
+.panel .post {
+  margin-left: 1em;
 }
 
 .panel .count {
@@ -156,9 +150,8 @@ body {
   font-weight: normal;
 }
 
-#recent-comments .comment-body div.comment-actions {
-  margin-bottom: 10px;
-  color: #888888;
+#recent-comments .comment-button {
+  color: #eeeeee;
 }
 
 #recent-comments .comment-body a {

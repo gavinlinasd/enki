@@ -2,6 +2,9 @@
 <html dir="ltr" lang="en-US">
 <head>
   <meta charset="utf-8">
+  <!-- Google Fonts -->
+  <link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
   <!-- Bootstrap CSS CDN -->
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
 
@@ -25,14 +28,32 @@
 </head>
 <body>
   <div id="page">
-    <div id="content">
+    <div id="content" class="container">
+      <br>
       <%= yield %>
     </div>
     <div id="nav">
-      <ul>
-        <li><%= nav_link_to("Dashboard", admin_root_path,       :accesskey => '1') %></li>
-        <li><%= nav_link_to("Posts",     admin_posts_path,      :accesskey => '2') %> <%= nav_link_to("(+)", new_admin_post_path, :accesskey => 'n') %></li>
-        <li><%= nav_link_to("Pages",     admin_pages_path,      :accesskey => '3') %> <%= nav_link_to("(+)", new_admin_page_path, :accesskey => 'p') %></li>
+      <ul class="nav nav-pills">
+        <li><%= nav_link_to("Dashboard", admin_root_path, :accesskey => '1') %></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" id="post-dropdown" data-toggle="dropdown" href="#">
+            Posts <b class="caret"></b>
+          </a>
+          <ul id="posts-dropdown-menu" class="dropdown-menu" role="menu">  
+            <li><%= nav_link_to("All Posts", admin_posts_path, :accesskey => '2') %> </li>
+            <li><%= nav_link_to("Create new post", new_admin_post_path, :accesskey => 'n') %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" id="page-dropdown" data-toggle="dropdown" href="#">
+            Pages <b class="caret"></b>
+          </a>
+          <ul id="pages-dropdown-menu" class="dropdown-menu" role="menu">  
+            <li><%= nav_link_to("All Pages", admin_pages_path, :accesskey => '3') %> </li>
+            <li><%= nav_link_to("Create new page", new_admin_page_path, :accesskey => 'p') %></li>
+          </ul>
+        </li>
+
         <li><%= nav_link_to("Comments",  admin_comments_path,   :accesskey => '4') %></li>
         <li><%= nav_link_to("Actions",   admin_undo_items_path, :accesskey => '5') %></li>
         <li><%= nav_link_to("Health",    admin_health_path,     :accesskey => '6') %></li>
