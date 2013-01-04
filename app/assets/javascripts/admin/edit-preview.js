@@ -9,7 +9,7 @@ $(document).ready(function() {
     var toggle_preview = function() {
       if ($('#preview').length == 0) {
         form.hide();
-        form.after('<div id="preview"><h3>Your entry will be formatted like this:</h3><p>Use Ctrl+E to return to edit mode.</p><div class="content"><p>Please wait...</p></div></div>');
+        form.after('<div id="preview"><h3>Your entry will be formatted like this:</h3><p>Use Ctrl+Q to return to edit mode.</p><div class="content"><p>Please wait...</p></div></div>');
 
         jQuery.ajax({
           type: 'POST',
@@ -31,7 +31,7 @@ $(document).ready(function() {
     }
 
     $(document).keyup(function(e) {
-      if (e.ctrlKey && (e.which == 69)) { // Works in recent Safari and FF, unsure about IE
+      if (e.ctrlKey && (e.which == 81)) { // Change to Ctrl+Q to avoid overlap shortcut in Chrome
         toggle_preview();
         e.preventDefault();
       }

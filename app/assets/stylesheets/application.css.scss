@@ -15,7 +15,7 @@
 body
 {
   color: black;
-
+  background: url(/assets/background/wild_oliva.png) repeat 0 0;
   font: normal 12px verdana, arial, helvetica, sans-serif;
   line-height: 1.5;
   padding: 0px;
@@ -24,11 +24,12 @@ body
 
 #page_container
 {
-  position: absolute;
   min-height: 400px;
-
+  background: url(/assets/background/gray_jean.png) repeat 0 0;
   color: black;
-	width: 100%;
+/* width: 100%; 
+  position: absolute;
+*/
 }
 
 #content {
@@ -106,7 +107,7 @@ small a, label a
 
 a:hover
 {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 #footer a
@@ -200,7 +201,7 @@ div.meta
   padding-left: 0em;
   padding-bottom: 0.5em;
   display: inline;
-  color: #cccccc;
+  color: #999999;
 	font-size: 9pt;
 }
 .archive-month .tags
@@ -279,7 +280,7 @@ textarea
 
 div.date
 {
-	color: #999;
+	color: #888;
 	font-size: .8em;
 }
 
