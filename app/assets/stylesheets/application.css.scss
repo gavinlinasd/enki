@@ -16,7 +16,8 @@ body
 {
   color: black;
   background: url(/assets/background/wild_oliva.png) repeat 0 0;
-  font: normal 12px verdana, arial, helvetica, sans-serif;
+  /* font: normal 12px verdana, arial, helvetica, sans-serif; */
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   line-height: 1.5;
   padding: 0px;
   margin: 0px;
@@ -24,7 +25,8 @@ body
 
 #page_container
 {
-  min-height: 400px;
+  min-height: 600px;
+  min-width: 1200px;
   background: url(/assets/background/gray_jean.png) repeat 0 0;
   color: black;
 /* width: 100%; 
@@ -33,15 +35,17 @@ body
 }
 
 #content {
-	width: 900px;
+  width: 900px;
   margin: 5px auto;
-	position: relative;
-	padding-right: 55px;
+  position: relative;
+  padding-right: 55px;
 /*	display: inline;*/
 }
 
 #footer
 {
+  clear: both;
+  margin: 5px auto;
   position: relative;
   font-size: 8pt;
 /*  padding-top: 5px;*/
@@ -53,12 +57,67 @@ body
 }
 
 /* Headings */
-h1#page_heading
+.page_header
 {
-  font-size: 24pt;
-	color: #000 !important;
+  height: 308px;
+  clear: both;
+  background: url(/assets/background/chalkboard1.jpg);
 }
 
+#banner, #banner-link
+{
+  display: block;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 60px;
+  padding-bottom: 10px;
+}
+
+#nav-bar ul li
+{
+  display: inline;
+}
+
+#nav-bar .nav a
+{
+  display: inline;
+}
+
+#nav-bar .nav a:hover
+{
+  margin-top:10px;
+}
+
+#nav-bar .nav img
+{
+  border: none;
+  padding-left: 45px;
+  padding-top: 40px;
+}
+
+#nav-bar .underscore
+{
+  background-repeat: repeat-y;
+  height: 23px;
+  margin-top: -25px;
+
+}
+
+#nav-bar .underscore div
+{
+  display: none;
+  float: left;
+  margin-left: 43px;
+  background: url(/assets/menu/underscore.png);
+}
+/*
+h1
+{
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  color: #333333;
+}
+*/
 h2
 {
   font-size: 1.4em;
@@ -124,11 +183,12 @@ img
 /* Two columns */
 #navigation
 {
-  position: absolute;
-  width: 15em;
+  float: left;
+  width: 20%;
+  /* position: absolute;
   top: -1px;
-  right: -1px;
-
+  right: -20px; */
+  
   border: none;
   padding: 5px;
 }
@@ -181,7 +241,9 @@ img
 
 #main
 {
-  padding-right: 150px;
+  float: left;
+  width: 75%;
+  padding-right: 30px;
   padding-left: 0px;
   padding-top: 0px;
   padding-bottom: 40px;

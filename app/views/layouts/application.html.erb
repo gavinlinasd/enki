@@ -2,6 +2,7 @@
 <html dir="ltr" lang="en-US">
 <head>
   <meta charset="utf-8">
+  <link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
   <!-- Bootstrap CSS CDN -->
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
   <title><%= html_title yield(:page_title) %></title>
@@ -13,8 +14,27 @@
 </head>
 <body>
   <div id="page_container" class="container">
+      <div class="page_header">
+        <img src="/assets/background/banner.png" id="banner">
+        <div id="nav-bar">
+          <div class="nav">
+            <% nav_list = ['home','projects','thoughts','codes','gadgets','random'] -%>
+            <% nav_list.each do |item| -%>
+              <a href="<%= root_url %><%if item=='projects' -%>pages/<%end-%><% unless item=='home' -%><%= item %><% end-%>">
+                <img src="/assets/menu/<%= item %>.png" alt="<%= item %>">
+              </a>
+            <% end -%>
+          </div>
+          <div >
+            <% nav_width = [100, 172, 179, 117, 157, 149] -%>
+            <% nav_width.each do |item| -%>
+            <div class="underscore" style="width: <%= item+4 %>px;">&nbsp;</div>
+            <% end -%>
+          </div>
+        </div>
+
+      </div>
     <div id="content">
-      <h1 id="page_heading"><a href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
 
       <div id="main">
         <%= yield %>
