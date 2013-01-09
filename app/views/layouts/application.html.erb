@@ -58,7 +58,7 @@
         <% end -%>
         <form method="get" id="sform" action="http://www.google.com/search">
           <div>
-            <h2><label for="q">Search</label></h2>
+            <h2>Search</h2>
 
             <input type="text" id="q" value="" name="q">
             <input type="hidden" name="sitesearch" value="<%= enki_config[:url] %>">
@@ -66,7 +66,7 @@
         </form>
       </div>
 
-      <div id="footer"><%= enki_config[:title] %> &#169; <%= enki_config[:author, :name] %>. Powered by <a href="http://www.enkiblog.com" title="A Ruby on Rails blogging app for the fashionable developer">Enki</a>.</div>
+      <div id="footer"><a href="<%=admin_root_path%>"><%= enki_config[:title] %></a> &#169; <%= enki_config[:author, :name] %>. Powered by <a href="http://www.enkiblog.com" title="A Ruby on Rails blogging app for the fashionable developer">Enki</a>.</div>
     </div>
   </div>
 <!-- Bootstrap Javascript CDN -->
