@@ -18,15 +18,15 @@
         <img src="/assets/background/banner.png" id="banner">
         <div id="nav-bar">
           <div class="nav">
-            <% nav_list = ['home','projects','thoughts','codes','gadgets','random'] -%>
+            <% nav_list = ['home','projects','thoughts','codes','random', 'about'] -%>
             <% nav_list.each do |item| -%>
-              <a href="<%= root_url %><%if item=='projects' -%>pages/<%end-%><% unless item=='home' -%><%= item %><% end-%>">
+              <a href="<%= root_url %><%if item=='projects' or item=='about' -%>pages/<%end-%><% unless item=='home' -%><%= item %><% end-%>">
                 <img src="/assets/menu/<%= item %>.png" alt="<%= item %>">
               </a>
             <% end -%>
           </div>
           <div >
-            <% nav_width = [100, 172, 179, 117, 157, 149] -%>
+            <% nav_width = [100, 172, 179, 117, 149, 118] -%>
             <% nav_width.each do |item| -%>
             <div class="underscore" style="width: <%= item+4 %>px;">&nbsp;</div>
             <% end -%>

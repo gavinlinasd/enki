@@ -21,3 +21,5 @@ config/database.yml
 db/schema.rb
 .bundle
 *.log
+*.swp
+*.swo
