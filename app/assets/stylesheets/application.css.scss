@@ -82,11 +82,8 @@ body
 #nav-bar .nav a
 {
   display: inline;
-}
-
-#nav-bar .nav a:hover
-{
-  margin-top:10px;
+  font-family: 'Fredericka the Great', cursive;
+  color: #ffffff;
 }
 
 #nav-bar .nav img
@@ -111,13 +108,13 @@ body
   margin-left: 43px;
   background: url(/assets/menu/underscore.png);
 }
-/*
+
 h1
 {
-  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  font-family: 'Fredericka the Great', cursive;
   color: #333333;
 }
-*/
+
 h2
 {
   font-size: 1.4em;
@@ -154,8 +151,7 @@ strong
 
 a
 {
-  color: #000051;
-
+  color: #333;
   text-decoration: none;
 }
 
