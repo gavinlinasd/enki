@@ -176,11 +176,23 @@ img
   border: solid 1px black;
 }
 
+/* Img class for Carousel */
+
+.fix-height img
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 300px;
+  max-height: 300px;
+}
+
 /* Two columns */
 #navigation
 {
   float: left;
-  width: 20%;
+  width: 10%;
   /* position: absolute;
   top: -1px;
   right: -20px; */
@@ -232,7 +244,7 @@ img
 #main
 {
   float: left;
-  width: 75%;
+  width: 85%;
   padding-right: 30px;
   padding-left: 0px;
   padding-top: 0px;
