@@ -30,6 +30,9 @@ gem 'jquery-rails'
 gem 'thin'
 gem 'newrelic_rpm'
 
+# gem for memcached
+gem 'dalli'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
