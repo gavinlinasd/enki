@@ -28,5 +28,10 @@ Enki::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Enable memcache for debuging
+  # config.action_controller.perform_caching = true
+  # config.cache_store = :dalli_store, '127.0.0.1' 
+
 end
 
