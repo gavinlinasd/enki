@@ -18,7 +18,7 @@
   width: 100%;
   top: 0px;
   left: 0px;
-  background: url(/assets/background/nasty_fabric.png) repeat 0 0;
+  background: url(/images/background/nasty_fabric.png) repeat 0 0;
 }
 
 #nav ul {
@@ -43,7 +43,7 @@
 
 body {
   padding-top: 30px;
-  background: url(/assets/background/gray_jean.png) repeat 0 0;
+  background: url(/images/background/gray_jean.png) repeat 0 0;
   font-family: 'Ubuntu', Helvetica, Sans-serif;
   font-size: 12pt;
   margin: 10px;

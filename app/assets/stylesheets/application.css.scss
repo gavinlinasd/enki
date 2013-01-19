@@ -15,7 +15,7 @@
 body
 {
   color: black;
-  background: url(/assets/background/wild_oliva.png) repeat 0 0;
+  background: url(/images/background/wild_oliva.png) repeat 0 0;
   /* font: normal 12px verdana, arial, helvetica, sans-serif; */
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -27,7 +27,7 @@ body
 {
   min-height: 600px;
   min-width: 1200px;
-  background: url(/assets/background/gray_jean.png) repeat 0 0;
+  background: url(/images/background/gray_jean.png) repeat 0 0;
   color: black;
 /* width: 100%; 
   position: absolute;
@@ -61,7 +61,7 @@ body
 {
   height: 308px;
   clear: both;
-  background: url(/assets/background/banner.jpg);
+  background: url(/images/background/banner.jpg);
 }
 
 #banner, #banner-link
@@ -110,7 +110,7 @@ body
   display: none;
   float: left;
   margin-left: 43px;
-  background: url(/assets/menu/underscore.png);
+  background: url(/images/menu/underscore.png);
 }
 
 h1

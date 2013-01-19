@@ -16,15 +16,12 @@
 <body>
   <div id="page_container" class="container">
       <div class="page_header">
-        <!--
-        <img src="/assets/background/banner.png" id="banner">
-        -->
         <div id="nav-bar">
           <div class="nav">
             <% nav_list = ['home','projects','thoughts','codes','random', 'about'] -%>
             <% nav_list.each do |item| -%>
               <a href="<%= root_url %><%if item=='projects' or item=='about' -%>pages/<%end-%><% unless item=='home' -%><%= item %><% end-%>">
-                <img src="/assets/menu/<%= item %>.png" alt="<%= item %>">
+                <img src="/images/menu/<%= item %>.png" alt="<%= item %>">
               </a>
             <% end -%>
           </div>
