@@ -18,6 +18,7 @@ end
 #end
 group :production do
   gem 'pg'
+  gem 'dalli'
 end
 
 platforms :jruby do
@@ -30,8 +31,6 @@ gem 'jquery-rails'
 gem 'thin'
 gem 'newrelic_rpm'
 
-# gem for memcached
-gem 'dalli'
 
 # Use unicorn as the web server
 # gem 'unicorn'

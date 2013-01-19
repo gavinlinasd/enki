@@ -15,7 +15,7 @@ Enki::Application.configure do
   # memcache config (Don't understand the :entitystore variable)
   config.action_dispatch.rack_cache = {
     :metastore    => Dalli::Client.new,
-    :entitystore  => Dalli::Client.new,
+    :entitystore  => 'file:tmp/cache/rack/body',
     :allow_reload => false
   }
 
@@ -48,7 +48,7 @@ Enki::Application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production
-  config.cache_store = :dalli_store
+  # config.cache_store = :dalli_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"

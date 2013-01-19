@@ -69,5 +69,9 @@ module Enki
 
 	# set precompile as false
 	# config.assets.initialize_on_precompile = false
+
+    # set cache-store to Dalli
+    config.cache_store = :dalli_store
+
   end
 end
