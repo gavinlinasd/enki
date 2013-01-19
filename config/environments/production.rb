@@ -12,6 +12,13 @@ Enki::Application.configure do
   config.serve_static_assets = true
   config.static_cache_control = "public, max-age=2592000"
 
+  # memcache config (Don't understand the :entitystore variable)
+  config.action_dispatch.rack_cache = {
+    :metastore    => Dalli::Client.new,
+    :entitystore  => 'file:tmp/cache/rack/body',
+    :allow_reload => false
+  }
+
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
