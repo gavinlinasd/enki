@@ -41,6 +41,7 @@
       </div>
 
       <div id="navigation">
+        <% cache("page_links_for_nav", :expires_in => 1.day) do %>
         <i class="icon-file"></i>
         <h2>Pages</h2>
         <ul>
@@ -48,6 +49,8 @@
             <li><%= link_to(link.name, link.url) %></li>
           <% end -%>
         </ul>
+        <% end -%>
+        <% cache("cate_links_for_nav", :expires_in => 1.day) do %>
         <% unless category_links_for_navigation.empty? -%>
           <i class="icon-th-list"></i>
           <h2>Categories</h2>
@@ -56,6 +59,7 @@
               <li><%= link_to(link.name, link.url) %></li>
             <% end -%>
           </ul>
+        <% end -%>
         <% end -%>
         <form method="get" id="sform" action="http://www.google.com/search">
           <div>

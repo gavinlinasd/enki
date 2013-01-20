@@ -1,9 +1,6 @@
 class Admin::PostsController < Admin::BaseController
   before_filter :find_post, :only => [:show, :update, :destroy]
 
-  # cache sweeper
-  # cache_sweeper :post_sweeper, :only => [:create, :update, :destroy]
-
   def index
     respond_to do |format|
       format.html {

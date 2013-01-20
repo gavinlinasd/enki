@@ -1,13 +1,5 @@
 class PostsController < ApplicationController
   
-  # TODO: caches these actions
-  # should be expired under admin_post_controller
-  # caches_action :index, :layout => false
-  # caches_action :show, :layout => false
-
-  # cache_sweeper :post_sweeper, :only => [:create, :update, :destroy]
-
- 
   def index
     @tag = params[:tag]
     @posts = Post.find_recent(:tag => @tag, :include => :tags)
