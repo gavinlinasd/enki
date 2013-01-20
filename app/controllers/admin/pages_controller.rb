@@ -60,7 +60,7 @@ class Admin::PagesController < Admin::BaseController
 
     respond_to do |format|
       format.js {
-        render :partial => 'pages/page', :locals => {:page => @page}
+        render :partial => 'pages/page-preview', :locals => {:page => @page}
       }
     end
   end
