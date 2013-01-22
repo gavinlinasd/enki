@@ -15,7 +15,8 @@ Enki::Application.configure do
   # memcache config (Don't understand the :entitystore variable)
   config.action_dispatch.rack_cache = {
     :metastore    => Dalli::Client.new,
-    :entitystore  => 'file:tmp/cache/rack/body',
+    :entitystore  => Dalli::Client.new,
+    # :entitystore  => 'file:tmp/cache/rack/body',
     :allow_reload => false
   }
 
