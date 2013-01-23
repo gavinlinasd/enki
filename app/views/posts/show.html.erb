@@ -29,9 +29,9 @@
 <div>
   <%= form_for [@post, @comment] do |form| -%>
     <p>
-      <%= form.text_field 'author' %>
       <%= form.label :author %>
-      <small>Name or <%= link_to 'OpenID', 'http://openidexplained.com/' %> (required)</small>
+      <%= form.text_field 'author' %>
+      <small>Name <!--or <%= link_to 'OpenID', 'http://openidexplained.com/' %>--> (required)</small>
     </p>
     <p>
       <%= form.text_area 'body' %><br/>

@@ -1,7 +1,7 @@
 <% content_for :page_title do -%>
   <%= posts_title(@tag) %>
 <% end -%>
-
+<!-- tag is <%= @tag %> -->
 <% content_for :head do -%>
   <%= auto_discovery_link_tag(:atom, @tag.nil? ? formatted_posts_path(:format => 'atom') : posts_path(:tag => @tag, :format => 'atom')) %>
 <% end -%>
