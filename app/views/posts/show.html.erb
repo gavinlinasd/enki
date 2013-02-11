@@ -4,16 +4,28 @@
 
 <%= render @post %>
 
-<ol class="commentlist">
-  <% @post.approved_comments.each do |comment| -%>
-    <li<%=raw cycle(' class="alt"', '') %> id="comment-<%= comment.id %>">
-      <%= render comment %>
-    </li>
-  <% end -%>
-</ol>
-
 <div class="related">Looking for more? Head on over to the <%= link_to 'archives', archives_path %>.</div>
 
+<br>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gforgavin'; // required: replace example with your forum shortname
+    var disqus_identifier = '<%= post_path(@post) %>';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+<!--
 <h2>Post a comment</h2>
 <% unless @comment.errors.empty? -%>
 <div class="errors">
@@ -31,12 +43,11 @@
     <p>
       <%= form.label :author %>
       <%= form.text_field 'author' %>
-      <small>Name <!--or <%= link_to 'OpenID', 'http://openidexplained.com/' %>--> (required)</small>
     </p>
     <p>
       <%= form.text_area 'body' %><br/>
-      <small>(<%= link_to 'lesstile enabled', 'http://lesstile.rubyforge.org' %> - surround code blocks with ---)</small>
     </p>
     <p><%= form.submit 'Add Comment' %></p>
   <% end -%>
 </div>
+-->
