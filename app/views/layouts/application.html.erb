@@ -21,7 +21,8 @@
             <% nav_list = ['home','projects','thoughts','codes','random', 'about'] -%>
             <% nav_list.each do |item| -%>
               <a href="<%= root_url %><%if item=='projects' or item=='about' -%>pages/<%end-%><% unless item=='home' -%><%= item %><% end-%>">
-                <img src="/images/menu/<%= item %>.png" alt="<%= item %>">
+                <!--<img src="/images/menu/<%= item %>.png" alt="<%= item %>">-->
+                <%= cl_image_tag("menu_#{item}.png") %>
               </a>
             <% end -%>
           </div>

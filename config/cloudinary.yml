@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hvfis3trp
+  api_key: '689548855132458'
+  api_secret: fiTaMKS9iFXWocyshAMj1uBA9nc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hvfis3trp
+  api_key: '689548855132458'
+  api_secret: fiTaMKS9iFXWocyshAMj1uBA9nc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hvfis3trp
+  api_key: '689548855132458'
+  api_secret: fiTaMKS9iFXWocyshAMj1uBA9nc
+  enhance_image_tag: true
+  static_image_support: false
