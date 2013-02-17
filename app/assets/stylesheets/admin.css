@@ -57,7 +57,7 @@ body {
   padding: 1em;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
-  width: 30em;
+  width: 50em;
   min-height: 270px;
 }
 
@@ -194,10 +194,33 @@ body {
   font-size: 12px;
 }
 
+#quick-links  {
+  margin-top: 10px;
+  margin-right: 10px;
+  color: #222222;
+  padding: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  min-height: 270px;
+}
+
+#quick-links ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+}
+
+#quick-links ul li {
+  margin: 10px;
+}
+
+#quick-links h2 {
+  font-family: 'Vollkorn', Georgia, Times, serif;
+}
+
 a {
   color: #222222;
 }
-
 /* -------- FORMS */
 form input,
 form select,

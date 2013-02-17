@@ -1,6 +1,7 @@
 <div id="summary">
+
 <h1><%= link_to(enki_config[:title], '/') %></h1>
-<p class="stats"><%= pluralize(@stats.post_count, 'post') %>, <%= pluralize(@stats.comment_count, 'comment') %>, <%= pluralize(@stats.tag_count, 'tag') %></p>
+<p class="stats"><%= pluralize(@stats.post_count, 'post') %>, <%= pluralize(@stats.tag_count, 'tag') %></p>
 </div>
 
 <div id="recent-posts" class="panel">
@@ -12,51 +13,21 @@
       <span class='post'>
         <%= link_to(truncate(post.title, :length => 50), admin_post_path(post)) %>
       </span>
-      <div class='count'><%= link_to(post.approved_comments.size, post_path(post)) %></div>
+      <div class='count'><%= link_to(post.approved_comments.size, post_path(post)+"#disqus_thread") %></div>
     </li>
   <% end -%>
 </ul>
 </div>
 
-<div id="recent-comments" class="panel">
-<h2>Latest Comments</h2>
+<div id="quick-links">
+<h2> Quick Links </h2>
 <ul>
-  <% @comment_activity.each_with_index do |activity, i| -%>
-    <li class="<%= i == 0 ? 'first ' : '' %>item">
-      <span class='label label-info'><%= activity.most_recent_comment.created_at.strftime("%b %e") %></span>
-      <span class='post'>
-        <%= link_to(truncate(activity.post.title, :length => 50), post_path(activity.post)) %>
-      </span>
-      <span class='count badge badge-success'><%= activity.post.approved_comments.size %></span>
-      <ul>
-      <!-- List of the comments -->
-        <% activity.comments.each_with_index do |comment, index| -%>
-          <%= content_tag :li, :class => activity.comments.size == index + 1 ? 'last' : nil do -%>
-            <%= link_to(comment.author, "#comment-body-#{comment.id}", {:id => "comment-link-#{comment.id}", :class => 'comment-link', :data => {:toggle => 'modal'} }) -%>
-          <% end -%>
-        <% end -%>
-      </ul>
-      <!-- Body of the comments as modals -->
-      <% activity.comments.each do |comment| -%>
-        <div class='modal hide fade' id='comment-body-<%= comment.id %>' tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <span class='label label-info'><%= comment.created_at.strftime("%b %e") %></span>
-            From: <%= comment.author %>
-          </div>
-          <div class="modal-body">
-          <%= comment.body_html %>
-          </div>
-          <div class="modal-footer">
-            <div class='comment-actions'>
-              <%= link_to('Edit', admin_comment_path(comment), {:class => "comment-button btn btn-primary"}) %>
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            </div>
-          </div>
-        </div>
-      <% end -%>
-    </li>
-  <% end -%>
+  <li><%= link_to("Google Analytics", "https://www.google.com/analytics/web/?hl=en&pli=1#dashboard/ohkP-VAITyW3DnBvOovG7g/a28305182w53986089p54884299/", {:class => "btn btn-info" , :target => "_blank"}) %>
+  </li>
+
+  <li><%= link_to("Heroku New Relics", "https://heroku.newrelic.com/accounts/233804/applications/1637546", {:class => "btn btn-primary" ,:target => "_blank"}) %>
+  </li>
+
+  <li><%= link_to("Disqus dashboard", "http://gforgavin.disqus.com/admin/moderate/", {:class => "btn btn-success" ,:target => "_blank"}) %>
 </ul>
 </div>
-
