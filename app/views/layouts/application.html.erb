@@ -18,18 +18,12 @@
       <div class="page_header">
         <div id="nav-bar">
           <div class="nav">
-            <% nav_list = ['home','projects','thoughts','codes','random', 'about'] -%>
+            <% nav_list = ['home','projects','random', 'about'] -%>
             <% nav_list.each do |item| -%>
               <a href="<%= root_url %><%if item=='projects' or item=='about' -%>pages/<%end-%><% unless item=='home' -%><%= item %><% end-%>">
                 <!--<img src="/images/menu/<%= item %>.png" alt="<%= item %>">-->
                 <%= cl_image_tag("menu_#{item}.png") %>
               </a>
-            <% end -%>
-          </div>
-          <div >
-            <% nav_width = [100, 172, 179, 117, 149, 118] -%>
-            <% nav_width.each do |item| -%>
-            <div class="underscore" style="width: <%= item+4 %>px;">&nbsp;</div>
             <% end -%>
           </div>
         </div>
@@ -42,6 +36,12 @@
       </div>
 
       <div id="navigation">
+        <div id="profile">
+            <%= cl_image_tag("photo.jpg", :width => 200, :height => 266, 
+                         :crop => :thumb, :gravity => :face, :class => "img-rounded")
+             %>
+            <i>"How do you like them apples?" </i>
+        </div>
         <% cache("page_links_for_nav", :expires_in => 1.day) do %>
         <i class="icon-file"></i>
         <h2>Pages</h2>
